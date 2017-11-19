@@ -3,6 +3,9 @@ const app = express();
 const http = require('http');
 const path = require('path');
 
+const routes = require('./server/routes.js');
+routes(app);
+
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('*', (req, res) => {
